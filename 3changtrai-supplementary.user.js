@@ -68,7 +68,7 @@
 
       if (num < 1) throw new Error(LANG.NUMBER_REQUESTS_INVALID)
 
-      if (num > 500) throw new Error(LANG.NUMBER_REQUESTS_EXCEEDED_LIMIT)
+      if (num > REQUEST_LIMIT) throw new Error(LANG.NUMBER_REQUESTS_EXCEEDED_LIMIT)
 
       if (num <= maxRequests) return batchRequest(num)
 
