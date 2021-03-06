@@ -9,7 +9,7 @@
 // @icon         https://3changtrai.com/favicon.ico
 // @match        http*://3changtrai.com/*
 // @resource     STYLES https://raw.githubusercontent.com/S-a-l-a-d/3changtrai-supplementary/main/styles.css
-// @grant        GM_getResourceTest
+// @grant        GM_getResourceText
 // @grant        GM_addStyle
 // ==/UserScript==
 
