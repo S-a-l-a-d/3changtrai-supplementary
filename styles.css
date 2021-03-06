@@ -1,0 +1,7 @@
+.supplementary-activity {
+  text-align: center;
+}
+
+.supplementary-activity td > :not(:first-child) {
+  margin-left: .25rem;
+}
