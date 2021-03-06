@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         3ChangTrai Supplementary
 // @namespace    3ctsupplementary
-// @version      0.1
+// @version      0.1.1
 // @description  A script to improve user experience on 3ChangTrai
 // @author       Salad
 // @homepage     https://github.com/S-a-l-a-d/3changtrai-supplementary
@@ -134,49 +134,33 @@
       min: 1,
       max: REQUEST_LIMIT
     })
+    const handleActivityClick = callback => async e => {
+      const buttons = [...e.target.parentNode.querySelectorAll("button")]
+
+      buttons.forEach(button => {
+        button.disabled = true
+      })
+
+      try {
+        await callback()
+        window.location.reload()
+      } catch (err) {
+        alert(`${LANG.ERROR_OCCURRED}: ${err.message}`)
+      } finally {
+        buttons.forEach(button => {
+          button.disabled = false
+        })
+      }
+    }
     const walkButton = elementService.create("button", {
       textContent: LANG.WALK
     }, {
-      click: async e => {
-        const buttons = [...e.target.parentNode.querySelectorAll("button")]
-
-        buttons.forEach(button => {
-          button.disabled = true
-        })
-
-        try {
-          await activityService.walk(parseInt(numInput.value, 10))
-          window.location.reload()
-        } catch (err) {
-          alert(`${LANG.ERROR_OCCURRED}: ${err.message}`)
-        } finally {
-          buttons.forEach(button => {
-            button.disabled = false
-          })
-        }
-      }
+      click: handleActivityClick(() => activityService.walk(parseInt(numInput.value, 10)))
     })
     const pushUpButton = elementService.create("button", {
       textContent: LANG.PUSH_UP
     }, {
-      click: async e => {
-        const buttons = [...e.target.parentNode.querySelectorAll("button")]
-
-        buttons.forEach(button => {
-          button.disabled = true
-        })
-
-        try {
-          await activityService.pushUp(parseInt(numInput.value, 10))
-          window.location.reload()
-        } catch (err) {
-          alert(`${LANG.ERROR_OCCURRED}: ${err.message}`)
-        } finally {
-          buttons.forEach(button => {
-            button.disabled = false
-          })
-        }
-      }
+      click: handleActivityClick(() => activityService.pushUp(parseInt(numInput.value, 10)))
     })
 
     column.appendChild(numInput)
