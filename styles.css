@@ -5,3 +5,17 @@
 .supplementary-activity td > :not(:first-child) {
   margin-left: .25rem;
 }
+
+div#ddtopmenubar {
+  margin: 0;
+  text-align: center;
+}
+
+div#ddtopmenubar ul li a {
+  float: left;
+}
+
+ul.menu {
+  display: inline-block;
+  padding: 0;
+}
