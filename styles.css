@@ -11,11 +11,11 @@ div#ddtopmenubar {
   text-align: center;
 }
 
-div#ddtopmenubar ul li a {
-  float: left;
-}
-
-ul.menu {
+div#ddtopmenubar ul.menu {
   display: inline-block;
   padding: 0;
+}
+
+div#ddtopmenubar ul.menu li a {
+  float: left;
 }

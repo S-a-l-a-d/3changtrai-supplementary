@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         3ChangTrai Supplementary
 // @namespace    3ctsupplementary
-// @version      0.1.2
+// @version      0.1.3
 // @description  A script to improve user experience on 3ChangTrai
 // @author       Salad
 // @homepage     https://github.com/S-a-l-a-d/3changtrai-supplementary
